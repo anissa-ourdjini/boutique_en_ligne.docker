@@ -1,0 +1,73 @@
+/* Tablet Styles (768px and up) */
+@media screen and (min-width: 768px) {
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex !important;
+        margin-top: 0;
+        justify-content: flex-end;
+    }
+
+    .nav-links li {
+        margin-left: 2rem;
+    }
+
+    .main-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .manga-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop Styles (1024px and up) */
+@media screen and (min-width: 1024px) {
+    .container {
+        padding: 0 2rem;
+    }
+
+    .hero {
+        padding: 6rem 2rem;
+    }
+
+    .hero-content {
+        max-width: 1000px;
+    }
+
+    .manga-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Large Desktop Styles (1200px and up) */
+@media screen and (min-width: 1200px) {
+    .container {
+        padding: 0;
+    }
+
+    .manga-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .hero h2 {
+        font-size: 3rem;
+    }
+} 

@@ -1,0 +1,555 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #4ecdc4;
+    --dark-color: #2c3e50;
+    --light-color: #f8f9fa;
+    --text-color: #333;
+    --shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+}
+
+/* Navigation */
+.main-nav {
+    background-color: white;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-brand h1 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.nav-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--dark-color);
+}
+
+.nav-links {
+    display: none;
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.nav-links.active {
+    display: block;
+}
+
+.nav-links li a {
+    display: block;
+    padding: 0.5rem 0;
+    color: var(--dark-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 60px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+.add-to-cart-btn {
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+.cta-button:hover {
+    background-color: #ff5252;
+}
+
+/* Featured Manga Section */
+.featured-manga {
+    padding: 2rem 1rem;
+}
+
+.featured-manga h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.manga-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.manga-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.manga-card:hover {
+    transform: translateY(-5px);
+}
+
+.manga-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.manga-info {
+    padding: 1rem;
+}
+
+.manga-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.manga-price {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-links a {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-1 { margin-bottom: 1rem; }
+.mb-2 { margin-bottom: 2rem; }
+.mt-1 { margin-top: 1rem; }
+.mt-2 { margin-top: 2rem; }
+
+/* Authentication Pages */
+.auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+.auth-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.auth-box h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.auth-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.auth-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255,107,107,0.2);
+}
+
+.auth-button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+    background: #ff5252;
+}
+
+.auth-links {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.auth-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    background: #ffe5e5;
+    color: #ff3333;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.success-message {
+    background: #e5ffe5;
+    color: #33cc33;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.back-to-home {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.back-to-home a {
+    color: var(--dark-color);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.back-to-home a:hover {
+    color: var(--primary-color);
+}
+
+/* Cart Page */
+.cart-page {
+    padding: 2rem 1rem;
+    margin-top: 60px;
+}
+
+.cart-items {
+    margin-bottom: 2rem;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.item-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+}
+
+.item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.item-quantity button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.item-quantity button:hover {
+    background: #f5f5f5;
+}
+
+.item-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    color: #ff3333;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.remove-item:hover {
+    color: #cc0000;
+}
+
+.cart-summary {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.summary-box h3 {
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.summary-row.total {
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-bottom: none;
+}
+
+.checkout-button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-button:hover {
+    background: #ff5252;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 2rem;
+    color: var(--dark-color);
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.login-message {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--dark-color);
+}
+
+.login-message a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.login-message a:hover {
+    text-decoration: underline;
+}
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+    background: #ff5252;
+}
+
+/* Loading state for buttons */
+.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+header {
+    position: relative;
+    z-index: 1000;
+}
+
+main.checkout-page {
+    margin-top: 80px; /* Ajout d'un espacement pour éviter que le contenu soit caché par la barre de navigation */
+}
+
+/* Style spécifique pour la page checkout */
+body.checkout .main-nav {
+    position: static;
+    width: 100%;
+}
+
+body.checkout main {
+    padding-top: 80px; /* Adjust if nav height changes */
+}
+
+/* Styles pour la page de profil */
+.profile-container {
+    max-width: 700px; /* Légèrement réduit pour un aspect plus compact */
+    margin: 50px auto;
+    padding: 30px; /* Augmentation du padding */
+    background-color: #fff;
+    border-radius: 10px; /* Bordures plus arrondies */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Ombre plus prononcée */
+    margin-top: 120px; /* Ajustement pour header fixe, légèrement plus d'espace */
+    border-top: 5px solid var(--primary-color); /* Bordure supérieure colorée */
+}
+
+.profile-container h2 {
+    text-align: center;
+    margin-bottom: 25px; /* Plus d'espace sous le titre */
+    color: var(--dark-color);
+    font-size: 2em; /* Titre plus grand */
+    padding-bottom: 15px; /* Espace pour la bordure inférieure */
+    border-bottom: 1px solid #eee; /* Ligne de séparation sous le titre */
+}
+
+.profile-info p {
+    font-size: 1.1em;
+    margin-bottom: 15px; /* Plus d'espace entre les lignes d'info */
+    color: var(--text-color);
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0; /* Séparateur léger entre les infos */
+    line-height: 1.8; /* Meilleur interligne */
+}
+
+.profile-info p:last-child {
+    border-bottom: none; /* Pas de bordure pour le dernier élément */
+    margin-bottom: 0; /* Pas de marge en bas pour le dernier élément */
+}
+
+.profile-info strong {
+    color: var(--primary-color); /* Utilisation de la couleur primaire pour les labels */
+    margin-right: 10px; /* Plus d'espace après le label */
+    font-weight: 600; /* Labels un peu plus gras */
+}
